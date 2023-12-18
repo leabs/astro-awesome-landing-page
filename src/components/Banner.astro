@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import Phone from '../images/iphone.png';
+const title = "Showcase 1 - Be serious about your music.";
+
+const description = "PlayIT! will become your favorite. It offers a list of features long enough that we could sit here talking about it all day. But, if you're serious about your music, you should definitely take a look. Find us one every market!";
+
+const button = {
+    text: "Appstore",
+    icon: "fa fa-apple",
+    link: "#"
+};
+---
+
+<div class="parallax filter-gradient orange" data-color="orange">
+    <div class="parallax-background">
+        <img class="parallax-background-image" src="/img/showcases/showcase-1/bg.jpg">
+    </div>
+    <div class= "container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="description">
+                    <h2>{title}</h2>
+                    <br>
+                    <h5>{description}</h5>
+                </div>
+                <div class="buttons">
+                    {
+                        button.link ?
+                            <a href={button.link} target="_blank" class="btn btn-fill btn-neutral">
+                                <i class={button.icon}></i> {button.text}
+                            </a>
+                            : null
+                    }
+                </div>
+            </div>
+            <div class="col-md-5  hidden-xs">
+                <div class="parallax-image">
+                    <img class="phone" src="/img/showcases/showcase-1/iphone.png"/>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
